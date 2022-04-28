@@ -1,0 +1,32 @@
+/*<----Init Explorer---->*/
+#explorer {
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    height: auto;
+    display: none;
+
+    li img {
+        width: 17px;
+        height: 17px;
+        margin: 0 1em;
+    }
+
+    .items_explorer {
+        background-color: #333333;
+        padding: .3em;
+        padding-left: .5em;
+        font-size: .7em;
+    }
+}
+.container_explorer {
+    background-color: $rgba_gray7;
+    box-shadow: 3px 3px 10px $rgba_black3;
+    border: 1px solid $border_exp;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

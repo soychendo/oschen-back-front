@@ -1,0 +1,121 @@
+/* <---- This Pc Explorer ----> */
+#this_pc {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    height: auto;
+}
+.active {
+    background-color: $active_pc;
+}
+.cont_pc {
+    list-style: none;
+    .mipc {
+        display: flex;
+        align-items: center;
+    }
+
+    li, span {
+        font-size: .95em;
+        font-weight: normal;
+        list-style: none;
+    }
+}
+.routes_pc li {
+    padding: .2em .5em;
+
+    &:hover {
+        background-color: $rgba_white2;
+    }
+}
+.desktop, 
+.documents, 
+.downloads, 
+.music,
+.pictures,
+.videos,
+.chendo_disk,
+.chendo {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.container_pc {
+    width: 100%;
+    background-color: $container_pc;
+    border-left: 1px solid $rgba_blue4;
+    border-top: 1px solid $rgba_blue4;
+    padding: 1em 0 .5em .5em;
+
+    img {
+        width: 50px;
+        height: 50px;
+        padding: .3em;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+    }
+}
+#thispc {
+    display: flex;
+    align-items: center;
+}
+.folder_pc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: .5em;
+
+    span {
+        font-size: .7em;
+        font-weight: normal;
+    }
+}
+/* <---- Explorer Default ----> */
+.show_explorer {
+    width: 100%;
+
+    img {
+        width: 17px;
+        height: 17px;
+    }
+}
+/* <---- Folder Default ----> */
+#desktop, 
+#documents, 
+#downloads, 
+#music,
+#pictures,
+#videos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+}
+.align_items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+
+    &:hover {
+        background-color: $rgba_white2;
+    }
+    img {
+        width: 25px;
+        height: 25px;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+    span {
+        font-size: .8em;
+    }
+}
+#music .align_items {
+    width: 70%;
+}
+/* <---- End This Pc Explorer ----> */

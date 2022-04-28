@@ -1,0 +1,44 @@
+@use '../../base/mixins' as m; // Import Mixins 
+/* <---- Menu Manage Explorer ----> */
+.menu_manage {
+    background-color: $black;
+    @include m.displayFlex( space-between );
+    width: 100%;
+}
+.menu_help {
+    display: flex;
+
+    li {
+        text-align: center;
+        font-size: .8em;
+        padding: .1em .7em;
+        width: 100%;
+        list-style: none;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+        
+        &:first-child {
+            background-color: $menu_help;
+            width: 100px;
+        }
+    }
+}
+.row_help {
+    position: absolute;
+    @include m.displayFlex;
+    right: .8em;
+
+    img {
+        padding-left: .3em;
+        width: 13px;
+        height: 13px;
+
+        &:last-child {
+            width: 17px;
+            height: 17px;
+        }
+    }
+}
+/* <---- End Manage Explorer ----> */

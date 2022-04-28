@@ -1,0 +1,131 @@
+/* <!---- Calculator Windows ----> */
+#chendo_calc {
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    height: auto;
+    display: none;
+}
+.calculators {
+    background-color: $calc_rgba;
+    box-shadow: 3px 3px 10px $rgba_black3;
+    border: 1px solid #3D3F40;
+    padding: .2em;
+    width: 300px;
+
+    .head {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5em;
+        z-index: -1;
+    }
+    h1 {
+        position: absolute;
+        top: .7em;
+        left: .7em;
+        font-size: .7em;
+    }
+}
+.mmc  {
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    padding-top: .8em;
+    top: 0;
+    right: 0;
+    opacity: .99;
+    z-index: 7;
+}
+.mmc .close, .maximize, .minimize {
+    width: 43px;
+    height: 30px;
+    padding: 0 1em;
+}
+.mmc .minimize:hover, .maximize:hover {
+    background-color: $rgba_white2;
+}
+.calculators .menu_calc {
+    display: flex;
+    align-items: center;
+    padding: .5em;
+    gap: 1em;
+
+    img {
+        width: 17px;
+        height: 17px;
+    }
+}
+.close:hover {
+    background-color: $calc_hover;
+}
+.disable {
+    color: $light-gray;
+}
+.disable:hover {
+    background-color: transparent;
+}
+.showDisplay {
+    width: 100%;
+    height: 70px;
+    text-align: end;
+    padding: .7em;
+
+    span {
+        font-size: 2em;
+    }
+    
+}
+.maths {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .m {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        width: 100%;
+
+        button {
+            background-color: transparent;
+        }
+    }
+}
+button {
+    background-color: $rgba_gray07;
+    text-transform: uppercase;
+    border: none;
+    height: 30px;
+    color: $white;
+    padding: .5em;
+    margin: .1em;
+
+    &:hover {
+        background-color: $rgba_white2;
+    }
+}
+.oscure {
+    background-color: $rgba_black7;
+}
+.equal {
+    background-color: $rgba_equal;
+}
+.equal:hover {
+    background-color: $equal;
+}
+.del {
+    text-transform: lowercase;
+}
+.operators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+/* <---- End Calculator Windows ----!> */

@@ -1,0 +1,142 @@
+/*-----------------------------------------------------------------------------------
+
+    Name: Windows 10 | chendo version
+    Theme URI: @chendito
+    Description: Windows 10 - Clone 70% | - Portfolio - Chendo
+    Author: @chendito - chendo : developer and web designer
+    Author URI: http://chendo.io
+    Github: https://github.com/chendito
+    Youtube: https://youtube.com/chendito
+
+-----------------------------------------------------------------------------------*/
+/* <---- Style Chendo Dev ----> */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
+/* <---- Scroll ----> */
+* { scrollbar-width:thin; }
+:root { 
+    scrollbar-color: $rgba_white2, $rgba_gray07 !important;
+}
+/* <---- Works on Chrome, Edge, and Safari ----> */
+*::-webkit-scrollbar {
+    width: 3px;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: $rgba_white2;
+    border-radius: 3px;
+} 
+@media (max-width: 768px) {
+::-webkit-scrollbar {display: none;}
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    word-break: break-all;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+img {
+    width: 100%;
+    border-style: none;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+.col-lg-4, .col-md-12, .col-md-4, .col-md-6, .col-md-8 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+div {
+    display: block;
+}
+.mb-4, .my-4 {
+    margin-bottom: 1rem!important;
+}
+.pt-4 {
+    margin-top: 3rem!important;
+}
+.pall {
+    padding: 3rem!important;
+}
+@media (min-width:992px) {
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%}
+    }
+@media (min-width:768px) {
+    .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%}
+    }
+@media (min-width:768px) {
+    .col-md-6 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 50%;
+        max-width: 50%}
+    }
+@media (min-width:768px) {
+    .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%}
+    }
+@media (min-width:768px) {
+    .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%}
+    }
+@media (min-width:768px) {
+    .col-content {
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+    }
+}
+/* <---- End Style Dev ----> */

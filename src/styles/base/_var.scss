@@ -1,0 +1,52 @@
+// font
+$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// colors global
+$gray: #444;
+$light-gray: #777;
+$black: #000;
+$white:#fff;
+$red: #f00;
+$aquamarine: #7FFFD4;
+$bodyback: #12475C;
+$chendomen: #2B2B2B;
+$chenborder: #A0A0A0;
+$chenhover: #414141;
+$chendisable: #616161;
+
+// File Explorer
+$background_exp: #191919;
+$border_exp: #3D3F40;
+$items_exp: #333333;
+$menu_help: #9A701F;
+$container_pc: #202020;
+
+// calculator
+$equal: #BA8D2C;
+
+// Rgba Global
+$rgba_gray8: rgba(26, 26, 26, .87);
+$rgba_gray7: rgba(31, 31, 31, .7);
+$rgba_gray3: rgba(25, 25, 25, .3);
+$rgba_gray07: rgba(26, 26, 26, 0.7);
+$active_pc: rgba(0, 169, 248, .4);
+$calc_rgba: rgba(40, 40, 40, .97);
+
+$rgba_black7: rgba(0, 0, 0, .7);
+$rgba_black4: rgba(0, 0, 0, .4);
+$rgba_black3: rgba(0, 0, 0, .3);
+
+$rgba_white5: rgba(255, 255, 255, .5);
+$rgba_white2: rgba(255, 255, 255, .2);
+
+$rgba_blue4: rgba(0, 169, 248, .4);
+
+$rgba_extended: rgba(100, 100, 100, .5);
+$calc_hover: rgba(232, 17, 35, .8);
+$rgba_equal: rgba(100, 79, 35, .8);
+
+// media query
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;

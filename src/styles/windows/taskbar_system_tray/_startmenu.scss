@@ -1,0 +1,183 @@
+@use '../../base/mixins' as m; // Import Mixins 
+/* <---- Logo Windows & Start Menu ----> */
+#startmenu {
+    @include m.displayFlex;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+
+        .logo_win {
+            padding: .01em;
+            margin: .32em .7em;
+            width: 17px;
+            height: 17px;
+        }
+}
+/* <---- End Logo windows ----> */
+/* <---- Init Start Menu ----> */
+#open_menu {
+    box-shadow: 3px -3px 5px 0px $rgba_black4;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: $rgba_gray8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 1.7em;
+    padding: 1em;
+    display: none;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 620px;
+        height: 430px;
+    }
+}
+.openMenu {
+    display: block !important;
+}
+/* <---- Grid User ---- > */
+.grid_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50px;
+    z-index: 1;
+
+    .icon_open {
+        padding: .7em 1em;
+
+        &:hover {
+            background-color: $rgba_white2;
+            padding: .7em 1em;
+        }
+        img {
+            width: 17px;
+            height: 17px;
+        }
+        .start {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        span {
+            visibility: hidden;
+        }
+    }
+    .icon_config .user {
+        border-radius: 50%;
+    }
+    .icon_config span {
+        position: absolute;
+        padding-left: 3em;
+
+    }
+}
+/* <---- End Grid User ---- > */
+/* <---- Grid Programs ---- > */
+.grid_programs {
+    width: 100%;
+    padding-left: 2.5em;
+    padding-right: .4em;
+    overflow-y: auto;
+
+    .letter {
+        display: flex;
+        font-size: .7em;
+        margin: 2em 0;
+    }
+    .icon_open {
+        cursor: default;
+        padding: .3em;
+        line-height: 0;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+    }
+    .icon_open img {
+        width: 23px;
+        height: 23px;
+    }
+    .icon_open span {
+        font-size: .7em;
+    }
+}
+.icon_open {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+/* <----End Grid Programs ---- > */
+/* <---- Grid Application ---- > */
+.grid_application {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: fit-content;
+    padding-left: .4em;
+
+    img {
+        width: 45px;
+        height: 45px;
+    }
+    span {
+        position: absolute;
+        font-size: .7em;
+        bottom: .3em;
+        left: .6em;
+    }
+}
+.grid_application .google, .photos, .mail, .store {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $rgba_extended;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: .13em;
+}
+.grid_application .google:hover, 
+.photos:hover, 
+.mail:hover, 
+.store:hover {
+    background-color: $rgba_white2;
+    outline: 1.5px groove $rgba_white5;
+}
+/* <---- End Grid Application ---- > */
+/* <---- Visibility START JS ---- */
+.grid-open {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: $rgba_blue4;
+    transition: all .3s ease-in;
+    transition-delay: 1s;
+    width: 230px;
+}
+.grid-open:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1px $rgba_gray3;
+    filter: blur(1px);
+}
+/* <---- End Visibility START ---- */
+/* <---- End Start Menu ----> */
+/* <---- End Logo Windows & Start Menu ----> */

@@ -1,0 +1,31 @@
+// import var.scss
+@use 'var' as v; 
+
+// Display Flex
+@mixin displayFlex( $jc: center ) {
+    display: flex;
+    justify-content: $jc;
+    align-items: center;
+}
+
+// Media Queries
+@mixin mobile {
+    @media (max-width: v.$mobile) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin desktopXL {
+    @media (max-width: v.$desktopXL) {
+        @content;
+    }
+}

@@ -1,0 +1,56 @@
+/* <---- Input Explorer ----> */
+.input_explorer {
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    max-width: 100%;
+    padding: .4em;
+    margin: 0 .4em;
+
+    input {
+        width: 100%;
+        max-width: 100%;
+        height: 30px;
+        outline: none;
+        background-color: $background_exp;
+        border: 1px solid $rgba_blue4;
+        color: $rgba_blue4;
+        padding: .3em;
+        user-select: text;
+    }
+}
+.arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: .5em;
+
+    img {
+        padding: 0 .5em;
+        width: 30px;
+        height: 30px;
+    }
+}
+.pc_information {
+    position: relative;
+    padding-left: .3em;
+    width: 100%;
+
+    img {
+        width: 17px;
+        height: 17px;
+    }    
+}
+.arrow_refresh {
+    position: absolute;
+    top: 0;
+    right: .5em;
+
+    img {
+        width: 10px;
+        height: 10px;
+    }
+}
+.search_chendo {
+    padding-left: .7em;
+}
+/* <---- End Input Explorer ----> */

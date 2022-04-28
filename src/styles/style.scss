@@ -1,0 +1,24 @@
+// global var and customs
+@import '@styles/base/var';
+@import '@styles/base/chendo';
+
+// folders / fields / Windows / Start Menu
+@import '@styles/windows/windows';
+@import '@styles/windows/taskbar_system_tray/taskbar_system_tray';
+@import '@styles/windows/taskbar_system_tray/startmenu';
+@import '@styles/windows/taskbar_system_tray/taskband';
+@import '@styles/windows/taskbar_system_tray/system_tray';
+
+// Explorer
+@import '@styles/windows/explorer/explorer';
+@import '@styles/windows/explorer/description';
+@import '@styles/windows/explorer/menu_manage';
+@import '@styles/windows/explorer/input_explorer';
+@import '@styles/windows/explorer/thispc';
+
+// Clculator
+@import '@styles/windows/calculator/calculator';
+
+// Chendomen
+@import '@styles/windows/menuchen/menuchen';
+

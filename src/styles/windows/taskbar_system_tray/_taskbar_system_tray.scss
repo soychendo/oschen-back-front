@@ -1,0 +1,15 @@
+/* <---- TaskBar and System Tray ----> */
+#taskbar_system_tray {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: $rgba_gray07;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 1.7em;
+}
+/* <---- End TaskBar and System Tray ----> */

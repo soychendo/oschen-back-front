@@ -1,0 +1,103 @@
+/* <---- Taskband ----> */
+.applications {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    cursor: default;
+
+    .icon_application {
+        cursor: default;
+        line-height: 0;
+
+        &:hover {
+            background-color: $rgba_white2;
+        }
+    }
+}
+.icon_application ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        position: relative;
+        z-index: 8;
+
+        ul {
+            position: absolute;
+            bottom: 1.7em;
+            left: -170%;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+.icon_application ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transition: all .1s ease-in-out .1s;
+}
+.icon_application a > img {
+    margin: .3em;
+}
+
+.applications img {
+    width: 17px;
+    height: 17px;
+}
+.applications .relative {
+    width: 150px;
+    height: 150px;
+}
+
+.icon_application ul ul li {
+    width: 100%;
+}
+/*<----TaskBar Extended---->*/
+.taskbar_extended {
+    display: none;
+}
+.extended {
+    background-color: $rgba_gray8;
+    padding: .5em .3em 0 .3em;
+    position: relative;
+    z-index: 7;
+
+    &:hover {
+        background-color: $rgba_gray7;
+    }
+    h1 {
+        color: $white;
+        font-size: .7em;
+        font-weight: normal;
+    }
+    img {
+        position: relative;
+        margin-bottom: .3em;
+        width: 130px;
+        height: 100%;
+    }
+    a {
+        cursor: default;
+    }
+}
+
+.extended .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    padding: .5em;
+
+    &:hover {
+        background-color: $red;
+    }
+}
+.absolute {
+    position: absolute;
+    bottom: -3em;
+}
+/* <---- Taskband ----> */

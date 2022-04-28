@@ -1,0 +1,19 @@
+/* <---- Description Explorer ----> */
+.description_close {
+    background-color: transparent;
+    padding: .3em;
+    width: 100px;
+    height: 31px;
+
+    .description {
+        display: flex;
+        position: absolute;
+
+        img {
+            width: 17px;
+            height: 17px;
+            margin-left: .5em;
+        }
+    }
+}
+/* <---- Description Explorer ----> */

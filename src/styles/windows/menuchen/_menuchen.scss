@@ -1,0 +1,43 @@
+#chendomen {
+  position:absolute;
+  width: 200px;
+  height: auto;
+  visibility: hidden;
+  padding: .3rem 0 0 0;
+  background: $chendomen;
+  outline: 1px solid $chenborder;
+  -khtml-opacity:0.8;
+  -moz-opacity:0.8;
+  opacity:0.8;
+  user-select: none;
+  z-index: 7;
+
+  a {
+    text-decoration: none;
+    cursor: default;
+
+    p {
+      border-bottom: 1px solid $chenborder;
+      padding: .3rem;
+      color: $white;
+      font-size: .7em;
+      margin: 0;
+    }
+    p:hover:nth-child(1), 
+    p:hover:nth-child(2), 
+    p:hover:nth-child(6),
+    p:hover:nth-child(7){
+      background-color: $chenhover;
+    }
+  }
+  .love {
+    color: $chendisable;;
+  }
+  p:nth-child(4), p:nth-child(5) {
+    border-bottom: none;
+    color: $chendisable;
+    padding: .3rem;
+    font-size: .7em;
+  }
+
+}
