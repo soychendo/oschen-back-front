@@ -1,6 +1,6 @@
-{
-  "windows": {
 
+[
+  {
     "explorer": [
       {"name": "Desktop", "id": 1},
       {"name": "Documents", "id": 2},
@@ -46,7 +46,7 @@
       {"name": "Bee Gees - How deep is your love", "id": 6},
       {"name": "Crazy | AeroSmith", "id": 7}
     ],
-    "music-mp3": [
+    "music_mp3": [
       {"name": "it-will-rain", "id": 1},
       {"name": "more-than-words", "id": 2},
       {"name": "let-it-be", "id": 3},
@@ -69,4 +69,4 @@
       {"name": "Single Page Features", "id": 2}
     ]
   }
-}
+]

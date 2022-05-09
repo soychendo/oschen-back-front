@@ -1,11 +1,10 @@
 import React from 'react';
-import { StartMenu } from '@containers/Taskbar_System/StartMenu';
-
+import Taskbar from '@containers/Taskbar_System/Taskbar';
 
 const App = () => {
   return (
     <>
-      <StartMenu />
+      <Taskbar />
     </>
   );
 }

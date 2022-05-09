@@ -1,9 +1,10 @@
 import React from 'react';
 import logoStartMenu from '@images/logo_win.svg'
 
-const Logo = () => {
+const Logo = ({toggle}) => {
+
   return (
-    <div id="startmenu" className="hide_menu">
+    <div onClick={toggle} id="startmenu" className="hide_menu">
       <img className="logo_win" src={logoStartMenu} alt="Start Menu" />
     </div>
   );

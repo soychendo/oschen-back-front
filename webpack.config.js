@@ -21,6 +21,7 @@ module.exports = {
       '@images': path.resolve(__dirname, './src/img'),
       '@components': path.resolve(__dirname, './src/components/'),
       '@containers': path.resolve(__dirname, './src/containers/'),
+      'database': path.resolve(__dirname, './src/db/')
     }
   },
   module: {

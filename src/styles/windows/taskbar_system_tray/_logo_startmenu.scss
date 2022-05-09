@@ -1,0 +1,18 @@
+@use '../../base/mixins' as m; // Import Mixins 
+/* <---- Logo Windows & Start Menu ----> */
+#startmenu {
+  @include m.displayFlex;
+  margin-left: 0;
+
+    &:hover {
+        background-color: $rgba_white2;
+    }
+
+    .logo_win {
+      padding: .01em;
+      margin: .32em .7em;
+      width: 17px;
+      height: 17px;
+    }
+}
+/* <---- End Logo windows ----> */
