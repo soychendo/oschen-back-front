@@ -30,7 +30,6 @@ import {
   showResult,
   explorer,
   contextMenu,
-  winRefresh
 } from "@scripts/selectors.js";
 // open menu - start menu
 export function openMenu(e) {
