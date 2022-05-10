@@ -6,7 +6,7 @@ const useDataBase = () => {
    
   useEffect(() => {
     
-    fetch('./db/windows.json')
+    fetch('./database/windows.json')
       .then(response => response.json())
       .then(data => {
         setDatos(data);

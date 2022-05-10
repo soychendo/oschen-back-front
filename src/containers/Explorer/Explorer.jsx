@@ -14,12 +14,12 @@ const Explorer = () => {
         <ul id="this_pc">
           <li className="cont_pc">
               <div className="mipc">
-                  <img src="../../src/img/explorer/pc.svg" alt="pc" />
+                  <img src="../../src/assets/explorer/pc.svg" alt="pc" />
                   <span>Chendo</span>
               </div>
               <ul className="routes_pc">
                   <li className="" id="">
-                      <img src="../../src/img/explorer/.svg" alt="" />
+                      <img src="../../src/assets/explorer/.svg" alt="" />
                       <span></span>
                   </li>
               </ul>
@@ -28,31 +28,31 @@ const Explorer = () => {
               <span>Folder</span>
               <div id="thispc">
                   <div className="folder_pc">
-                      <img src="../../src/img/explorer/folder/" alt="" />
+                      <img src="../../src/assets/explorer/folder/" alt="" />
                       <span></span>
                   </div>
               </div>       
               <div id="desktop" data-id="1">
                   <div className="align_items">
-                      <img src="../../src/img/explorer/folder/default.svg" alt="" />
+                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
                       <span></span>
                   </div>
               </div>
               <div id="documents" data-id="2">
                   <div className="align_items">
-                      <img src="../../src/img/explorer/folder/default.svg" alt="" />
+                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
                       <span></span>
                   </div>
               </div>
               <div id="downloads" data-id="3">
                   <div className="align_items">
-                      <img src="../../src/img/explorer/folder/default.svg" alt="" />
+                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
                       <span></span>
                   </div>
               </div>
               <div id="music" data-id="4">
                   <div className="align_items" data-id="">
-                      <img src="../../src/img/explorer/doc_music.svg" alt="" />
+                      <img src="../../src/assets/explorer/doc_music.svg" alt="" />
                       <span></span>
                       <audio data-id="">
                           <source src="../../src/audioseven/audio/" />
@@ -61,13 +61,13 @@ const Explorer = () => {
               </div>
               <div id="pictures" data-id="5">
                   <div className="align_items">
-                      <img src="../../src/img/explorer/doc_img.svg" alt="" />
+                      <img src="../../src/assets/explorer/doc_img.svg" alt="" />
                       <span data-id=""></span>
                   </div>
               </div>
               <div id="videos" data-id="6">
                   <div className="align_items">
-                      <img src="../../src/img/explorer/doc_video.svg" alt="" />
+                      <img src="../../src/assets/explorer/doc_video.svg" alt="" />
                       <span></span>
                   </div>
               </div>

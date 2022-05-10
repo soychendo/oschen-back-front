@@ -1,19 +1,26 @@
 import React from 'react';
+
 import TaskbarExtended from '@containers/Taskbar_System/TaskbarExtended';
+import application from '../../../public/database/application';
 
 const IconApplication = () => {
+
   return (
-    <div className="icon_application">
+    <>
+    {application.map(icon => ( 
+    <div key={icon.name} className="icon_application">
       <ul>
-        <li>
-          <img className="absolute" src="../../src/img/previews/" alt="" />
-          <a href="#" className="btn-show" data-id="">
-            <img className="btn-show" src="../../src/img/pro/" alt="" />
-          </a>
-          <TaskbarExtended />
-        </li>
+      <li>
+        <a href="#" className="btn-show" data-id={icon.id}>
+          <img className="btn-show" src={`assets/pro/${icon.tumb}`} alt={icon.name} />
+        </a>
+        <TaskbarExtended name={icon.name} imagen={icon.imagen} id={icon.id} />
+      </li>
       </ul>
     </div>
+    ))}
+    </>
+    
   );
 }
 
