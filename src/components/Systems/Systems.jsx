@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import useMediaQuery from '@components/Hooks/useMediaQuery';
 import network from '@images/pro/red.svg';
-import sound from '@images/pro/sound.svg';
 import notify from '@images/pro/notify.svg';
-import Clock from './Clock';
+import Clock from '@components/Systems/Clock';
 
 const Systems = () => { 
-
-  const [hour, setHour] = useState({
-    date: new Date()
-  });
+  const matches = useMediaQuery("(min-width: 769px)");
+  const [hour, setHour] = useState( { date: new Date() } );
 
   useEffect(() => {
 
     (function() {
-      setInterval(
-        () => setHour({ date: new Date() }), 1000
+      setTimeout(
+        () => setHour(
+        { date: new Date() }), 1000
       )
     })();
     
@@ -23,11 +22,9 @@ const Systems = () => {
   return (
     
     <div className="systems">
-      <img src={network} alt="red" />
-      <img src={sound} alt="sound" />
-      <span>Esp</span>
+      {matches ? <img src={network} alt="red" /> : null}
       <Clock hour={hour.date} />
-      <img src={notify} alt="Notifications" />
+      {matches ?  <img src={notify} alt="Notifications" /> : null}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TaskbarExtended from '@containers/Taskbar_System/TaskbarExtended';
-import application from '../../../public/database/application';
+import application from '@public/database/application';
 
 const IconApplication = () => {
 

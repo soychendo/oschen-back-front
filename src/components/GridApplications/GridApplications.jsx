@@ -6,7 +6,7 @@ import Store from '@images/pro/store.svg';
 
 const GridApplications = () => {
   return (
-    <div className="grid_application">
+    <div className="GridApplications">
       <div className="google">
         <img src={MicrosoftEdge} alt="Microsoft Edge" />
         <span>Microsoft Edge</span>

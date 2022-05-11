@@ -1,3 +1,4 @@
+@use '../../base/mixins' as m; // Import Mixins 
 /* <---- Init Start Menu ----> */
 #open_menu {
     box-shadow: 3px -3px 5px 0px $rgba_black4;
@@ -14,14 +15,22 @@
         display: grid;
         grid-template-columns: 50% 50%;
         width: 620px;
-        height: 430px;
+        height: 400px;
     }
+    @include m.tablet {
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 240px;
+            height: 400px;
+        }
+    };
 }
 .openMenu {
     display: block !important;
 }
 /* <---- Grid User ---- > */
-.grid_user {
+.GridUser {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,7 +71,7 @@
 }
 /* <---- End Grid User ---- > */
 /* <---- Grid Programs ---- > */
-.grid_programs {
+.GridPrograms {
     width: 100%;
     padding-left: 2.5em;
     padding-right: .4em;
@@ -74,9 +83,11 @@
         margin: 2em 0;
     }
     .icon_open {
+        position: relative;
         cursor: default;
         padding: .3em;
         line-height: 0;
+        overflow: hidden;
 
         &:hover {
             background-color: $rgba_white2;
@@ -91,16 +102,38 @@
     }
 }
 .icon_open {
-    position: relative;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 1em;
     width: 100%;
 }
+.icon_open small {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ripple 7s linear;
+    z-index: 7;
+}
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 200px;
+        height: 200px;
+    }
+}
 /* <----End Grid Programs ---- > */
 /* <---- Grid Application ---- > */
-.grid_application {
+.GridApplications {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: fit-content;
@@ -117,18 +150,19 @@
         left: .6em;
     }
 }
-.grid_application .google, .photos, .mail, .store {
+.GridApplications .google, .photos, .mail, .store {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: $rgba_extended;
+    outline: 1.5px groove $rgba_white2;
     position: relative;
-    width: 100px;
-    height: 100px;
-    margin: .13em;
+    width: 95px;
+    height: 95px;
+    margin: .2em;
 }
-.grid_application .google:hover, 
+.GridApplications .google:hover, 
 .photos:hover, 
 .mail:hover, 
 .store:hover {

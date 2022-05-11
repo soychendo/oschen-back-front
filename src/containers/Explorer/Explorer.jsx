@@ -1,5 +1,5 @@
 import React from 'react';
-import DescriptionClose from '@components/descriptionClose/DescriptionClose';
+import DescriptionClose from '@components/DescriptionClose/DescriptionClose';
 import MenuManage from '@components/MenuManage/MenuManage';
 import InputExplorer from '@components/InputExplorer/InputExplorer';
 import ItemExplorer from '../../components/ItemExplorer/ItemExplorer';

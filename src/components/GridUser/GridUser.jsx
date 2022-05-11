@@ -8,7 +8,7 @@ import on_off from '@images/ism/power.svg';
 
 const GridUser = () => {
   return (
-    <div className="grid_user">
+    <div className="GridUser">
       <div className="icon_open">
         <img src={config} alt="open config on/off" />
         <span className="start">Start</span>
