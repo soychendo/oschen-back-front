@@ -2,8 +2,7 @@
 /* <---- Init Start Menu ----> */
 #open_menu {
     box-shadow: 3px -3px 5px 0px $rgba_black4;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(12px);
     background-color: $rgba_gray8;
     position: absolute;
     bottom: 0;
@@ -15,19 +14,16 @@
         display: grid;
         grid-template-columns: 50% 50%;
         width: 620px;
-        height: 400px;
+        height: 420px;
     }
     @include m.tablet {
         .grid {
             display: grid;
             grid-template-columns: 1fr;
             width: 240px;
-            height: 400px;
+            height: 420px;
         }
     };
-}
-.openMenu {
-    display: block !important;
 }
 /* <---- Grid User ---- > */
 .GridUser {
@@ -39,13 +35,15 @@
     bottom: 0;
     height: 100%;
     width: 50px;
-    z-index: 1;
+    z-index: 4;
 
     .icon_open {
         padding: .7em 1em;
+        border: 1.5px solid transparent;
 
         &:hover {
             background-color: $rgba_white2;
+            border: 1.5px solid $rgba_white2;
             padding: .7em 1em;
         }
         img {
@@ -56,19 +54,36 @@
             text-transform: uppercase;
             font-weight: 700;
         }
-        span {
-            visibility: hidden;
-        }
     }
-    .icon_config .user {
+    .icon_config .Chendo {
         border-radius: 50%;
     }
     .icon_config span {
         position: absolute;
         padding-left: 3em;
-
     }
 }
+/* <---- Visibility START JS ---- */
+.openUser {
+    backdrop-filter: blur(12px);
+    height: 100%;
+    inset: 0;
+    background-color: $rgba_blue4;
+    transition: all .1s ease-in;
+    width: 230px;
+}
+.openUser:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1px $rgba_gray3;
+    filter: blur(1px);
+}
+/* <---- End Visibility START ---- */
 /* <---- End Grid User ---- > */
 /* <---- Grid Programs ---- > */
 .GridPrograms {
@@ -83,11 +98,13 @@
         margin: 2em 0;
     }
     .icon_open {
-        position: relative;
         cursor: default;
         padding: .3em;
         line-height: 0;
         overflow: hidden;
+        border: 1.5px solid transparent;
+        border-left: none;
+        border-right: none;
 
         &:hover {
             background-color: $rgba_white2;
@@ -102,34 +119,23 @@
     }
 }
 .icon_open {
+    position: relative;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 1em;
-    width: 100%;
+    z-index: 3;
 }
-.icon_open small {
+.icon_open::before {
+    content: '';
     position: absolute;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, .25);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: ripple 7s linear;
-    z-index: 7;
-}
-@keyframes ripple {
-    0% {
-        width: 0;
-        height: 0;
-    }
-    80% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        width: 200px;
-        height: 200px;
-    }
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)
+    );
+    z-index: 1;
 }
 /* <----End Grid Programs ---- > */
 /* <---- Grid Application ---- > */
@@ -170,27 +176,5 @@
     outline: 1.5px groove $rgba_white5;
 }
 /* <---- End Grid Application ---- > */
-/* <---- Visibility START JS ---- */
-.grid-open {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    background-color: $rgba_blue4;
-    transition: all .3s ease-in;
-    transition-delay: 1s;
-    width: 230px;
-}
-.grid-open:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: 0 0 1px $rgba_gray3;
-    filter: blur(1px);
-}
-/* <---- End Visibility START ---- */
 /* <---- End Start Menu ----> */
 /* <---- End Logo Windows & Start Menu ----> */

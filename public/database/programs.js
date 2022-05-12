@@ -8,7 +8,7 @@ const programs = [
   { "name": "Calculator v.01", "imagen": "calculator.svg", "letter": "C", "id": "4"},
   { "name": "Calendar 7", "imagen": "calendar.svg", "id": "5"},
   { "name": "Camera", "imagen": "camera.svg", "id": "6"}, 
-  { "name": "Chendito.com", "imagen": "folder.svg", "id": "7"},
+  { "name": "Chendo.io", "imagen": "folder.svg", "id": "7"},
   { "name": "Chendo", "imagen": "folder.svg", "id": "8"},
 
   { "name": "Firefox", "imagen": "firefox.svg", "letter": "F", "id": "9"},

@@ -1,7 +1,6 @@
 import React from 'react';
 import programs from '@public/database/programs';
-import useHover from '@components/Hooks/useHover';
-
+import spotlight from '@utils/spotlight';
 
 const GridPrograms = () => {
   return (
@@ -9,7 +8,7 @@ const GridPrograms = () => {
       {programs.map(icon => (
       <React.Fragment key={icon.id}>
       {icon.letter ? <span className="letter">{icon.letter}</span> : null}
-      <div onClick={useHover} className="icon_open">
+      <div onLoad={spotlight} className="icon_open">
       <img src={`assets/pro/${icon.imagen}`} alt={icon.name} />
       <span>{icon.name}</span>
       </div>

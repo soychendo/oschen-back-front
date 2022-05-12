@@ -22,7 +22,8 @@ module.exports = {
       '@public': path.resolve(__dirname, './public/'),
       '@components': path.resolve(__dirname, './src/components/'),
       '@containers': path.resolve(__dirname, './src/containers/'),
-      'database': path.resolve(__dirname, './src/db/')
+      '@database': path.resolve(__dirname, './piblic/database/'),
+      '@utils': path.resolve(__dirname, './src/utils/')
     }
   },
   module: {

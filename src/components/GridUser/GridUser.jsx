@@ -1,39 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
+import userArray from '@public/database/userArray';
 import config from '@images/ism/start.svg';
-import userLogo from '@images/ism/user.jpg';
-import documents from '@images/ism/documents.svg';
-import pictures from '@images/ism/pictures.svg';
-import settings from '@images/ism/settings.svg';
-import on_off from '@images/ism/power.svg';
 
 const GridUser = () => {
+
+  const [user, setUser] = useState(false);
+  let className = 'GridUser';
+  
+  const handleUser = () => {
+    setUser(!user);
+  }
+  user ? className = 'GridUser openUser' : null;
+
+  const handleLeave = () => {
+    setUser(false);
+  }
+
   return (
-    <div className="GridUser">
-      <div className="icon_open">
-        <img src={config} alt="open config on/off" />
-        <span className="start">Start</span>
+    <div onMouseLeave={handleLeave} className={className}>
+      <div onClick={handleUser} className="icon_open">
+        <img src={config} alt="Open Config on/off" />
+        {user 
+        ? <span className="start">Start</span> 
+        : <span style={{visibility: "hidden"}}>Chendo</span>}
       </div>
       <div className="icon_config">
-        <div className="icon_open">
-          <img className="user" src={userLogo} alt="user account" />
-          <span>chendo</span>
+        {userArray.map(item => (
+        <div key={item.name} onClick={handleUser} style={{transition: "all .2s ease-in"}} className="icon_open">
+          <img className={item.name} src={`assets/ism/${item.imagen}`} alt={item.name} />
+          {user && <span style={{transition: "all .2s ease-in"}}>{item.name}</span> }
         </div>
-        <div className="icon_open">
-          <img src={documents} alt="documents" />
-          <span>Documents</span>
-        </div>
-        <div className="icon_open">
-          <img src={pictures} alt="Pictures" />
-          <span>Pictures</span>
-        </div>
-        <div className="icon_open">
-          <img src={settings} alt="Config" />
-          <span>Settings</span>
-        </div>
-        <div className="icon_open">
-          <img src={on_off} alt="on/off" />
-          <span>Power</span>
-        </div>
+        ))}
       </div>
     </div>
   );
