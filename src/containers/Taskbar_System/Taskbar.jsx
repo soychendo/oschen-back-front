@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import IconApplication from '@components/IconApplication/IconApplication';
-import {Logo} from '@components/LogoStartMenu/Logo';
-import Systems from '@components/Systems/Systems';
+import IconApplication from '@components/taskbar/IconApplication/IconApplication';
+import {Logo} from '@components/taskbar/LogoStartMenu/Logo';
+import Systems from '@components/taskbar/Systems/Systems';
 import {StartMenu} from '@containers/Taskbar_System/StartMenu';
 
 const Taskbar = () => {

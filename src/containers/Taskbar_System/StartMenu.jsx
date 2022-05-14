@@ -1,8 +1,8 @@
 import React from 'react';
-import GridUser from '@components/GridUser/GridUser';
-import GridPrograms from '@components/GridPrograms/GridPrograms';
-import GridApplications from '@components/GridApplications/GridApplications';
-import useMediaQuery from '@components/Hooks/useMediaQuery';
+import GridUser from '@components/taskbar/GridUser/GridUser';
+import GridPrograms from '@components/taskbar/GridPrograms/GridPrograms';
+import GridApplications from '@components/taskbar/GridApplications/GridApplications';
+import useMediaQuery from '@hooks/useMediaQuery';
 
 const StartMenu = () => {
 
@@ -10,7 +10,7 @@ const StartMenu = () => {
 
   return(
     <React.Fragment> 
-      <div id="open_menu">
+      <div id="StartMenu">
       <div className="grid">
         <GridUser />
         <GridPrograms />

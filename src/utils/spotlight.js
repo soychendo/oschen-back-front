@@ -26,5 +26,4 @@ const spotlight = () => {
   
 }
 
-
 export default spotlight;

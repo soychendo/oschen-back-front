@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "fake-api": "json-server --watch public/database/db.json --port 5000"
   },
   "keywords": [
     "PHP",

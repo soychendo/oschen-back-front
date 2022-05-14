@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import useMediaQuery from '@components/Hooks/useMediaQuery';
+import useMediaQuery from '@hooks/useMediaQuery';
 import network from '@images/pro/red.svg';
 import notify from '@images/pro/notify.svg';
-import Clock from '@components/Systems/Clock';
+import Clock from '@components/taskbar/Systems/Clock';
 
 const Systems = () => { 
   const matches = useMediaQuery("(min-width: 769px)");

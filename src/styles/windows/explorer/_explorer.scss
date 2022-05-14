@@ -1,12 +1,11 @@
 /*<----Init Explorer---->*/
-#explorer {
+#Explorer {
     position: absolute;
     top: 3em;
     left: 50%;
     transform: translateX(-50%);
     right: 0;
     height: auto;
-    display: none;
 
     li img {
         width: 17px;

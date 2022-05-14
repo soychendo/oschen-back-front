@@ -1,81 +1,99 @@
-import React from 'react';
-import DescriptionClose from '@components/DescriptionClose/DescriptionClose';
-import MenuManage from '@components/MenuManage/MenuManage';
-import InputExplorer from '@components/InputExplorer/InputExplorer';
-import ItemExplorer from '../../components/ItemExplorer/ItemExplorer';
+import React, { useState } from 'react';
+
+import ThisPc from '@components/explorer/explorerInfo/ThisPc';
+import Desktop from '@components/explorer/explorerInfo/Desktop';
+import Documents from '@components/explorer/explorerInfo/Documents';
+import Downloads from '@components/explorer/explorerInfo/Downloads';
+import Music from '@components/explorer/explorerInfo/Music';
+import Pictures from '@components/explorer/explorerInfo/Pictures';
+import Videos from '@components/explorer/explorerInfo/Videos';
+
+import DescriptionClose from '@components/explorer/DescriptionClose/DescriptionClose';
+import MenuManage from '@components/explorer/MenuManage/MenuManage';
+import InputExplorer from '@components/explorer/InputExplorer/InputExplorer';
+import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
+
+import ExplorerList from '@components/explorer/ExplorerList/ExplorerList';
+
+const initialState = {
+  desktop: false,
+  documents: false,
+  downloads: false,
+  music: false,
+  pictures: false,
+  videos: false,
+}
 
 const Explorer = () => {
+
+  const [computer, setComputer] = useState(true); 
+  const [route, setRoute] = useState(initialState);
+
+  const handleComputer = () => {
+    setComputer(true);
+    setRoute(initialState);
+  }
+
+  const handleRoutes = () => {
+  const routes = document.querySelectorAll('.RoutesPc > li')
+  routes.forEach(route => {
+    route.addEventListener('click', () => {
+      let option = route.getAttribute('data-id');
+
+      switch(true) {
+        case option == 1: 
+          setComputer(false);
+          setRoute({desktop: true});
+          break;
+        case option == 2:
+          setComputer(false);
+          setRoute({documents: true});
+          break;
+        case option == 3: 
+          setComputer(false);
+          setRoute({downloads: true});
+          break;
+        case option == 4:
+          setComputer(false);
+          setRoute({music: true});
+          break;
+        case option == 5: 
+          setComputer(false);
+          setRoute({pictures: true});
+          break;
+        case option == 6:
+          setComputer(false);
+          setRoute({videos: true});
+          break;      
+        default:
+          setRoute(initialState)
+          break;
+      };
+    });
+  });
+};
+
   return (
-    <div id="explorer" data-id="1" className="explorer">
-      <div className="container_explorer">
-        <DescriptionClose />
-        <MenuManage />
-        <InputExplorer />
-        <ul id="this_pc">
-          <li className="cont_pc">
-              <div className="mipc">
-                  <img src="../../src/assets/explorer/pc.svg" alt="pc" />
-                  <span>Chendo</span>
-              </div>
-              <ul className="routes_pc">
-                  <li className="" id="">
-                      <img src="../../src/assets/explorer/.svg" alt="" />
-                      <span></span>
-                  </li>
-              </ul>
-          </li>
-          <div className="container_pc">
-              <span>Folder</span>
-              <div id="thispc">
-                  <div className="folder_pc">
-                      <img src="../../src/assets/explorer/folder/" alt="" />
-                      <span></span>
-                  </div>
-              </div>       
-              <div id="desktop" data-id="1">
-                  <div className="align_items">
-                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
-                      <span></span>
-                  </div>
-              </div>
-              <div id="documents" data-id="2">
-                  <div className="align_items">
-                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
-                      <span></span>
-                  </div>
-              </div>
-              <div id="downloads" data-id="3">
-                  <div className="align_items">
-                      <img src="../../src/assets/explorer/folder/default.svg" alt="" />
-                      <span></span>
-                  </div>
-              </div>
-              <div id="music" data-id="4">
-                  <div className="align_items" data-id="">
-                      <img src="../../src/assets/explorer/doc_music.svg" alt="" />
-                      <span></span>
-                      <audio data-id="">
-                          <source src="../../src/audioseven/audio/" />
-                      </audio>
-                  </div>
-              </div>
-              <div id="pictures" data-id="5">
-                  <div className="align_items">
-                      <img src="../../src/assets/explorer/doc_img.svg" alt="" />
-                      <span data-id=""></span>
-                  </div>
-              </div>
-              <div id="videos" data-id="6">
-                  <div className="align_items">
-                      <img src="../../src/assets/explorer/doc_video.svg" alt="" />
-                      <span></span>
-                  </div>
-              </div>
-              
-          </div>
-        </ul>
-        <ItemExplorer />
-      </div>
+    <div id="Explorer" data-id="1" className="explorer">
+    <div className="container_explorer">
+      <DescriptionClose />
+      <MenuManage />
+      <InputExplorer />
+      <ul id="ContentPc">
+        <ExplorerList handleRoutes={handleRoutes} handleComputer={handleComputer} />  
+        <section className="ContainerPc">
+          <span>Folder</span>
+          {computer ? <ThisPc /> : null}
+          {route.desktop ? <Desktop /> : null}
+          {route.documents ? <Documents /> : null}
+          {route.downloads ? <Downloads /> : null}
+          {route.music ? <Music /> : null}
+          {route.pictures ? <Pictures /> : null}
+          {route.videos ? <Videos /> : null}
+        </section>
+      </ul>
+      <ItemExplorer />
+    </div>
     </div>
   );
 }

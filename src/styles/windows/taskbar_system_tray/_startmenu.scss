@@ -1,8 +1,8 @@
 @use '../../base/mixins' as m; // Import Mixins 
 /* <---- Init Start Menu ----> */
-#open_menu {
-    box-shadow: 3px -3px 5px 0px $rgba_black4;
-    backdrop-filter: blur(12px);
+#StartMenu {
+    box-shadow: 0 0 12px 0 $rgba_black4;
+    backdrop-filter: blur(5px);
     background-color: $rgba_gray8;
     position: absolute;
     bottom: 0;

@@ -1,5 +1,5 @@
 /* <---- This Pc Explorer ----> */
-#this_pc {
+#ContentPc {
     display: grid;
     grid-template-columns: 30% 70%;
     width: 100%;
@@ -8,7 +8,7 @@
 .active {
     background-color: $active_pc;
 }
-.cont_pc {
+.ExplorerList {
     list-style: none;
     .mipc {
         display: flex;
@@ -21,7 +21,7 @@
         list-style: none;
     }
 }
-.routes_pc li {
+.RoutesPc li {
     padding: .2em .5em;
 
     &:hover {
@@ -40,7 +40,7 @@
     justify-items: center;
     align-items: center;
 }
-.container_pc {
+.ContainerPc {
     width: 100%;
     background-color: $container_pc;
     border-left: 1px solid $rgba_blue4;
@@ -57,9 +57,10 @@
         }
     }
 }
-#thispc {
+.ThisPc {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 .folder_pc {
     display: flex;
@@ -92,7 +93,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    display: none;
 }
 .align_items {
     display: flex;
