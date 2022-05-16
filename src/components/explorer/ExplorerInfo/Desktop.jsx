@@ -1,10 +1,9 @@
 import React from 'react';
-import {useData} from '@components/Data/useData';
-// import useTotal from '../../Data/useTotal';
+import {useDataFetch} from '@hooks/useDataFetch';
 
 const Desktop = () => {
-
-  const data = useData("desktop");
+  const url = 'http://localhost:5000/desktop';
+  const data = useDataFetch(url);
 
   return (
     <div id="desktop" data-id="1">

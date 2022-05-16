@@ -9,14 +9,14 @@ const Systems = () => {
   const [hour, setHour] = useState( { date: new Date() } );
 
   useEffect(() => {
-
+    let clear;
     (function() {
-      setTimeout(
+      clear = setInterval(
         () => setHour(
         { date: new Date() }), 1000
       )
     })();
-    
+    return () => clearInterval(clear)
   }, [hour])
   
   return (

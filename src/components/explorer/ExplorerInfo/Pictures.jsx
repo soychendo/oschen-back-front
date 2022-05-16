@@ -1,9 +1,9 @@
 import React from 'react';
-import {useData} from '@components/Data/useData';
+import {useDataFetch} from '@hooks/useDataFetch';
 
 const Pictures = () => {
-
-  const data = useData("pictures");
+  const url = 'http://localhost:5000/pictures';
+  const data = useDataFetch(url);
 
   return (
     <div id="pictures" data-id="5">

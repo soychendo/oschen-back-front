@@ -15,7 +15,7 @@ import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
 
 import ExplorerList from '@components/explorer/ExplorerList/ExplorerList';
 
-const initialState = {
+const initialPc = {
   desktop: false,
   documents: false,
   downloads: false,
@@ -27,11 +27,13 @@ const initialState = {
 const Explorer = () => {
 
   const [computer, setComputer] = useState(true); 
-  const [route, setRoute] = useState(initialState);
+  const [route, setRoute] = useState(initialPc);
+  const [count, setCount] = useState(8);
 
   const handleComputer = () => {
     setComputer(true);
-    setRoute(initialState);
+    setRoute(initialPc);
+    setCount(8)
   }
 
   const handleRoutes = () => {
@@ -39,6 +41,10 @@ const Explorer = () => {
   routes.forEach(route => {
     route.addEventListener('click', () => {
       let option = route.getAttribute('data-id');
+      setTimeout(() => {
+        const items = document.querySelectorAll('.align_items').length;
+        setCount(items);
+      }, 350);
 
       switch(true) {
         case option == 1: 
@@ -66,7 +72,7 @@ const Explorer = () => {
           setRoute({videos: true});
           break;      
         default:
-          setRoute(initialState)
+          setRoute(initialPc)
           break;
       };
     });
@@ -92,7 +98,7 @@ const Explorer = () => {
           {route.videos ? <Videos /> : null}
         </section>
       </ul>
-      <ItemExplorer />
+      <ItemExplorer count={count} />
     </div>
     </div>
   );

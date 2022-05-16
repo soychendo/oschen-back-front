@@ -1,9 +1,9 @@
 import React from 'react';
-import {useData} from '@components/Data/useData';
+import {useDataFetch} from '@hooks/useDataFetch';
 
 const Music = () => {
-
-  const data = useData("music")
+  const url = 'http://localhost:5000/music';
+  const data = useDataFetch(url);
 
   return (
     <div id="music" data-id="4">
