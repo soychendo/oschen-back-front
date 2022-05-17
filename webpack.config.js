@@ -24,7 +24,8 @@ module.exports = {
       '@components': path.resolve(__dirname, './src/components/'),
       '@containers': path.resolve(__dirname, './src/containers/'),
       '@database': path.resolve(__dirname, './piblic/database/'),
-      '@utils': path.resolve(__dirname, './src/utils/')
+      '@utils': path.resolve(__dirname, './src/utils/'),
+      '@context': path.resolve(__dirname, './src/context/')
     }
   },
   module: {

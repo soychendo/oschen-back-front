@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
 import ThisPc from '@components/explorer/explorerInfo/ThisPc';
 import Desktop from '@components/explorer/explorerInfo/Desktop';
@@ -14,6 +15,7 @@ import InputExplorer from '@components/explorer/InputExplorer/InputExplorer';
 import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
 
 import ExplorerList from '@components/explorer/ExplorerList/ExplorerList';
+import Audio from '@components/explorer/Audio/Audio';
 
 const initialPc = {
   desktop: false,
@@ -29,6 +31,8 @@ const Explorer = () => {
   const [computer, setComputer] = useState(true); 
   const [route, setRoute] = useState(initialPc);
   const [count, setCount] = useState(8);
+  
+  const { activeSong } = useContext(GlobalContext);
 
   const handleComputer = () => {
     setComputer(true);
@@ -77,9 +81,10 @@ const Explorer = () => {
       };
     });
   });
-};
+  };
 
   return (
+    <>
     <div id="Explorer" data-id="1" className="explorer">
     <div className="container_explorer">
       <DescriptionClose />
@@ -101,6 +106,8 @@ const Explorer = () => {
       <ItemExplorer count={count} />
     </div>
     </div>
+    {activeSong ? <Audio /> : null}
+    </>
   );
 }
 

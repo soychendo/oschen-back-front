@@ -21,6 +21,7 @@
     }
 }
 .container_explorer {
+    position: relative;
     background-color: $rgba_gray7;
     box-shadow: 3px 3px 10px $rgba_black3;
     border: 1px solid $border_exp;

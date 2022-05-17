@@ -1,0 +1,123 @@
+#Audio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(60, 44, 13, .5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+  border: 1px solid #3D3F40;
+  filter: blur(.3px);
+  position: absolute;
+  padding: 0 .5em 0 0;
+  bottom: 2rem;
+  right: 1rem;
+  width: 350px;
+  height: 100px;
+}
+.AudioContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100%;
+}
+.AudioDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  overflow: hidden;
+  height: 100%;
+}
+.AlbumImg img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-play {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12.5px 0 12.5px 17px;
+  border-color: transparent transparent transparent #ffffff;
+  cursor: pointer;
+}
+.btn-stop {
+  height: 25px;
+  width: 17px;
+  border-left: 4px solid rgb(255, 255, 255);
+  border-right: 4px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+/* <---- Estilos al input range ----> */  
+input[type='range'] {
+  display: block;
+  width: 100px;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #FFF;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FFF;
+  margin-top: -6px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #FFF;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FFF;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: #FFF;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #FFF;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #FFF;
+  height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #FFF;
+  height: 3px;
+}
+
+input[type=range]::-ms-track {
+  background-color: #FFF;
+  height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+  background-color: #FFF;
+}
+
+input[type=range]::-ms-fill-upper {
+  background-color: #FFF;
+} 

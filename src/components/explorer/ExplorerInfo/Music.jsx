@@ -1,18 +1,31 @@
-import React from 'react';
-import {useDataFetch} from '@hooks/useDataFetch';
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
 const Music = () => {
-  const url = 'http://localhost:5000/music';
-  const data = useDataFetch(url);
+
+  const audioContext = useContext(GlobalContext);
+
+  useEffect(() => {
+    audioContext.getAudios();
+  }, [])
 
   return (
     <div id="music" data-id="4">
-      {data.map(music => (
-        <div key={music.name} className="align_items" data-id={music.id}>
-          <img src={`assets/content/${music.image}`} alt={music.name} />
-          <span>{music.name}</span>
-        </div>
-      ))}
+      {
+        audioContext.songs.length
+          ? audioContext.songs.map(audio => (
+            <div 
+              key={audio.name} 
+              onDoubleClick={() => audioContext.getAudio(audio.id)} 
+              className="align_items" 
+              data-id={audio.id}
+            >
+              <img src={`assets/content/${audio.image}`} alt={audio.name} />
+              <span>{audio.name}</span>
+            </div>
+          ))
+          : null 
+      }
     </div>
   );
 }
