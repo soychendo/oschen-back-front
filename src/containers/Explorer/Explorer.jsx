@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '@context/GlobalContext';
+import React, { useState } from 'react';
 
 import ThisPc from '@components/explorer/explorerInfo/ThisPc';
 import Desktop from '@components/explorer/explorerInfo/Desktop';
@@ -15,7 +14,6 @@ import InputExplorer from '@components/explorer/InputExplorer/InputExplorer';
 import ItemExplorer from '@components/explorer/ItemExplorer/ItemExplorer';
 
 import ExplorerList from '@components/explorer/ExplorerList/ExplorerList';
-import Audio from '@components/explorer/Audio/Audio';
 
 const initialPc = {
   desktop: false,
@@ -26,13 +24,11 @@ const initialPc = {
   videos: false,
 }
 
-const Explorer = () => {
+const Explorer = ({toggleOutMenu}) => {
 
   const [computer, setComputer] = useState(true); 
   const [route, setRoute] = useState(initialPc);
   const [count, setCount] = useState(8);
-  
-  const { activeSong } = useContext(GlobalContext);
 
   const handleComputer = () => {
     setComputer(true);
@@ -85,7 +81,7 @@ const Explorer = () => {
 
   return (
     <>
-    <div id="Explorer" data-id="1" className="explorer">
+    <div onMouseDown={toggleOutMenu} id="Explorer" data-id="1" className="explorer">
     <div className="container_explorer">
       <DescriptionClose />
       <MenuManage />
@@ -106,7 +102,6 @@ const Explorer = () => {
       <ItemExplorer count={count} />
     </div>
     </div>
-    {activeSong ? <Audio /> : null}
     </>
   );
 }

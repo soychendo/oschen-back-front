@@ -6,25 +6,25 @@ const Music = () => {
   const audioContext = useContext(GlobalContext);
 
   useEffect(() => {
-    audioContext.getAudios();
+    audioContext.getData('music');
   }, [])
 
   return (
     <div id="music" data-id="4">
       {
-        audioContext.songs.length
-          ? audioContext.songs.map(audio => (
-            <div 
-              key={audio.name} 
-              onDoubleClick={() => audioContext.getAudio(audio.id)} 
-              className="align_items" 
-              data-id={audio.id}
-            >
-              <img src={`assets/content/${audio.image}`} alt={audio.name} />
-              <span>{audio.name}</span>
-            </div>
-          ))
-          : null 
+      audioContext.data.length
+        ? audioContext.data.map(audio => (
+          <div 
+            key={audio.name} 
+            onDoubleClick={() => audioContext.getAudio(audio.id)} 
+            className="align_items" 
+            data-id={audio.id}
+          >
+            <img src={`assets/content/${audio.image}`} alt={audio.name} />
+            <span>{audio.name}</span>
+          </div>
+        ))
+        : null 
       }
     </div>
   );

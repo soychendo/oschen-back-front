@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
+
 import MiPc from '@images/explorer/pc.svg';
 import documentView from '@images/explorer/document_view.svg';
 import document from '@images/explorer/document.svg';
@@ -8,6 +10,9 @@ import maximize from '@images/pro/maximize.svg';
 import close from '@images/pro/close.svg';
 
 const DescriptionClose = () => {
+
+  const { closeExplorer } = useContext(GlobalContext);
+
   return (
     <div className="description_close">
       <div className="description">
@@ -18,7 +23,7 @@ const DescriptionClose = () => {
       <div className="mmc">
         <img className="minimize" src={minimize} alt="minimize" />
         <img className="maximize" src={maximize} alt="maximize" />
-        <img className="close" src={close} alt="close" />
+        <img onClick={() => closeExplorer()} className="close" src={close} alt="close" />
       </div>
   </div>
   );

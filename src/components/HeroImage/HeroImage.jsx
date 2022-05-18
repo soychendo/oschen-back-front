@@ -1,10 +1,10 @@
 import React from 'react';
 import heroImage from '@public/windows.jpg'
 
-const HeroImage = () => {
+const HeroImage = ({toggleOutMenu}) => {
   return (
     <header id="HeroImage">
-      <img src={heroImage} alt="Windows 10 with React" />
+      <img onMouseDown={toggleOutMenu} src={heroImage} alt="Windows 10 with React" />
     </header>
   );
 }

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
-import TaskbarExtended from '@containers/Taskbar_System/TaskbarExtended';
+import TaskbarExtended from '@components/taskbar/IconApplication/TaskbarExtended';
 import application from '@public/database/application';
 
 const IconApplication = () => {
+
+  const { openExplorer, explorer } = useContext(GlobalContext);
 
   return (
     <>
@@ -11,10 +14,13 @@ const IconApplication = () => {
     <div key={icon.name} className="icon_application">
       <ul>
       <li>
-        <a href="#" className="btn-show" data-id={icon.id}>
+        <a onClick={openExplorer} className="btn-show" data-id={icon.id}>
           <img className="btn-show" src={`assets/pro/${icon.tumb}`} alt={icon.name} />
         </a>
-        <TaskbarExtended name={icon.name} imagen={icon.imagen} id={icon.id} />
+        {
+        explorer
+          ? <TaskbarExtended name={icon.name} imagen={icon.imagen} id={icon.id} /> : null
+        }
       </li>
       </ul>
     </div>

@@ -1,14 +1,20 @@
-import { GET_SONGS, GET_SONG, CLOSE_PLAYER, ON_PLAYER, OFF_PLAYER } from "@context/types";
+import { 
+  GET_DATA, 
+  GET_SONG,
+  CLOSE_PLAYER, 
+  ON_PLAYER, 
+  OFF_PLAYER, 
+} from "@context/types";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export const dataReducer = (state, action) => {
-  const { payload, type } = action;
+  const { type, payload } = action;
 
   switch (type) {
-    case GET_SONGS:
+    case GET_DATA:
       return {
         ...state,
-        songs: payload,
+        data: payload,
       };
     case GET_SONG:
       return {
@@ -30,7 +36,7 @@ export const dataReducer = (state, action) => {
       return {
         ...state,
         activeSong: false
-      }  
+      }
     default:
       return state;
   }
