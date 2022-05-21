@@ -1,6 +1,6 @@
 # Windows | Chendo Version ![Status badge](https://img.shields.io/badge/status-in%70progress-green)
 
-✨ Versión de Windows 10, cada parte creada desde cero, sin librerías, ni frameworks, creado con mucho corazón .
+✨ Versión de Windows 10 con React, creado con mucho corazón .
 
 
 ## 🚀 Instalación
@@ -9,17 +9,13 @@
 `cd windows`
 3. Instala las dependencias
 `npm install`
-4. Corre el ambiente local
-`npm run dev`
-
-## 🛠 Despliegue
-1. Una vez instaladas las dependencias, puedes hacer el build
-`npm run build`
-2. Puedes servir el proyecto desde Php Server, extensión de vsc.
-3. También puedes hacerlo desde la consola, si tienes instalo php en tu sistema con el comando `php -S localhost:3000`
+4. Corre el servidor Api Fake
+`npm run fake-api`
+5. Corre el ambiente local
+`npm run start`
 
 ## 🎶 Base de Datos Windows
-La base de datos se encuentra en la carpeta databesql
+Esstamos simulando una api con json-server
 
 ## 🧾 License
 The MIT License (MIT)

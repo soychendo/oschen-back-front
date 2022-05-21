@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ExplorerContext } from '@context/ExplorerContext';
+
 import arrowRight from '@images/explorer/arrow_right.svg'
 import arrowLeft from '@images/explorer/arrow_left.svg'
 import down from '@images/explorer/down.svg'
 import refresh from '@images/explorer/refresh.svg'
 
 const InputExplorer = () => {
+
+  const { handleThis } = useContext(ExplorerContext)
+
   return (
     <div className="input_explorer">
       <div className="arrows">
-        <img src={arrowRight} alt="right" />
+        <img onClick={handleThis} src={arrowRight} alt="right" />
         <img src={arrowLeft} alt="left" />
       </div>
       <div className="pc_information">

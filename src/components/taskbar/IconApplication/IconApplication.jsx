@@ -6,14 +6,14 @@ import application from '@public/database/application';
 
 const IconApplication = () => {
 
-  const { openExplorer, explorer } = useContext(GlobalContext);
+  const { openExplorer, explorer, outStartMenu } = useContext(GlobalContext);
 
   return (
     <>
     {application.map(icon => ( 
     <div key={icon.name} className="icon_application">
       <ul>
-      <li>
+      <li onMouseDown={outStartMenu}>
         <a onClick={openExplorer} className="btn-show" data-id={icon.id}>
           <img className="btn-show" src={`assets/pro/${icon.tumb}`} alt={icon.name} />
         </a>

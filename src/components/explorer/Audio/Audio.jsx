@@ -1,9 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
+import OschenMouseDown from '@utils/OschenMouseDown';
+
+import { useZindex } from '@hooks/useZindex';
 
 import close from '@images/pro/close.svg';
 
-const Audio = ({toggleOutMenu}) => {
+const Audio = () => {
+
+  const ca = document.querySelector('.ca')
+  const { active, changeZindex } = useZindex(ca)
 
   const { 
     selectedSong, 
@@ -16,12 +22,19 @@ const Audio = ({toggleOutMenu}) => {
     isPlaying 
   } = useContext(GlobalContext);
 
+  useEffect(() => {
+    changeZindex()
+  }, [])
+
   return (
-    <div 
-    onMouseDown={toggleOutMenu} 
+    <div
+    onMouseMove={changeZindex()}
+    onMouseDown={OschenMouseDown}
     onLoad={() => onPlay()} 
     onEnded={autoPlay} 
     id="Audio"
+    className="audio ca"
+    style={active}
     >
       <div className="mmc">
           <img onClick={() => closePlayer()} className="close" src={close} alt="close" />
@@ -31,7 +44,11 @@ const Audio = ({toggleOutMenu}) => {
           {selectedSong ? (
             <>
             <div className="AlbumImg">
-              <img src={`assets/audioseven/album/${selectedSong.album}`} alt={selectedSong.name} />
+              <img 
+                src={`assets/audioseven/album/${selectedSong.album}`} 
+                alt={selectedSong.name} 
+                style={{pointerEvents: 'none'}}
+              />
             </div>
             <marquee 
             behavior="scroll" 

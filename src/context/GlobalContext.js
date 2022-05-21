@@ -6,7 +6,9 @@ import {
   GET_SONG,
   CLOSE_PLAYER, 
   ON_PLAYER, 
-  OFF_PLAYER, 
+  OFF_PLAYER,
+  START_MENU,
+  OUT_START_MENU,
 } from '@context/types';
 
 const GlobalContext = createContext();
@@ -18,13 +20,14 @@ const GlobalProvider = ({ children }) => {
     selectedSong: null,
     activeSong: false,
     isPlaying: false,
+    activeMenu: false,
   }
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [explorador, setExplorador] = useState(false);
 
-  const getData = async (id) => {
+  const getData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/' + id);
+      const response = await fetch('http://localhost:5000/music');
       const json = await response.json();
       dispatch({type: GET_DATA, payload: json})
     } catch (error) {
@@ -77,6 +80,18 @@ const GlobalProvider = ({ children }) => {
   const closeExplorer = () => {
     setExplorador(false);
   }
+  // State Start Menu 
+  const toogleMenu = () => {
+    dispatch({type: START_MENU});
+  }
+  const outStartMenu = () => {
+    const os = document.querySelector('.os_system');
+    window.addEventListener('mousedown', e => {
+      if(e.target !== os && !os?.contains(e.target)) {
+        dispatch({type: OUT_START_MENU})
+      }
+    }) 
+  }
 
   return(
     <GlobalContext.Provider value={{
@@ -85,6 +100,9 @@ const GlobalProvider = ({ children }) => {
       activeSong: state.activeSong,
       isPlaying: state.isPlaying,
       explorer: explorador,
+      activeMenu: state.activeMenu,
+      toogleMenu,
+      outStartMenu,
       onPlay,
       onPause,
       onToggle,
@@ -95,7 +113,7 @@ const GlobalProvider = ({ children }) => {
       getData,
       getAudio,
       closeExplorer,
-      openExplorer
+      openExplorer,
     }}>
       {children}
     </GlobalContext.Provider>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
+
 import logoStartMenu from '@images/logo_win.svg'
 
-const Logo = ({toggle}) => {
+const Logo = () => {
+
+  const { toogleMenu } = useContext(GlobalContext)
 
   return (
-    <div onClick={toggle} id="startmenu" className="hide_menu">
+    <div onClick={toogleMenu} id="startmenu" className="hide_menu">
       <img className="logo_win" src={logoStartMenu} alt="Start Menu" />
     </div>
   );

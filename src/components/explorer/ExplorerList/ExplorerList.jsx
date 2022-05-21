@@ -1,27 +1,36 @@
-import React from 'react';
-import explorerDB from '@public/database/explorer';
+import React, { useContext } from 'react';
+import { ExplorerContext } from '@context/ExplorerContext';
+
+import Desktop from '@components/explorer/ExplorerList/Desktop';
+import Document from '@components/explorer/ExplorerList/Document';
+import Download from '@components/explorer/ExplorerList/Download';
+import Music from '@components/explorer/ExplorerList/Music';
+import Picture from '@components/explorer/ExplorerList/Picture';
+import Video from '@components/explorer/ExplorerList/Video';
+import OschenDrive from '@components/explorer/ExplorerList/OschenDrive';
+import OschenThis from '@components/explorer/ExplorerList/OschenThis';
 
 import pc from '@images/explorer/pc.svg';
 
-const ExplorerList = ({handleRoutes, handleComputer}) => {
+const ExplorerList = () => {
+
+  const { handleThis } = useContext(ExplorerContext);
+
   return (
     <li className="ExplorerList">
-      <div onClick={handleComputer} className="mipc">
+      <div onClick={handleThis} className="mipc">
         <img src={pc} alt="pc" />
         <span>Chendo</span>
       </div> 
       <ul className="RoutesPc">
-        {explorerDB.map(route => (   
-        <li 
-          onLoad={handleRoutes} 
-          key={route.name} 
-          data-id={route.id} 
-          className={route.name.toLowerCase()}
-        >
-          <img src={`assets/explorer/${route.image}`} alt={route.name} />
-          <span>{route.name}</span>
-        </li>
-        ))}
+        <Desktop />
+        <Document />
+        <Download />
+        <Music />
+        <Picture />
+        <Video />
+        <OschenDrive />
+        <OschenThis />
       </ul>
   </li>
   );

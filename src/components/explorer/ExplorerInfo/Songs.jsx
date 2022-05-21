@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '@context/GlobalContext';
 
-const Music = () => {
+const Songs = () => {
 
   const audioContext = useContext(GlobalContext);
 
   useEffect(() => {
-    audioContext.getData('music');
+    audioContext.getData();
   }, [])
 
   return (
@@ -16,7 +16,7 @@ const Music = () => {
         ? audioContext.data.map(audio => (
           <div 
             key={audio.name} 
-            onDoubleClick={() => audioContext.getAudio(audio.id)} 
+            onClick={() => audioContext.getAudio(audio.id)} 
             className="align_items" 
             data-id={audio.id}
           >
@@ -30,4 +30,4 @@ const Music = () => {
   );
 }
 
-export default Music;
+export default Songs;

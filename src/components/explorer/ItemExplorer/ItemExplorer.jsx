@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ItemExplorer = ({count}) => {
+const ItemExplorer = () => {
     
   return (
     <div className="items_explorer">
-      {count} items
+      Oschen
     </div>
   );
 }

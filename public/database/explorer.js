@@ -6,8 +6,8 @@ const explorerDB = [
   {name: "Music", image: "music.svg", id: 4},
   {name: "Pictures", image: "pictures.svg", id: 5},
   {name: "Videos", image: "videos.svg", id: 6},
-  {name: "Chendito C:", image: "chendo_disk.svg", id: 7},
-  {name: "Chendo D:", image: "chendo_disk.svg", id: 8},
+  {name: "Oschen", image: "chendo_disk.svg", id: 7},
+  {name: "Chendo", image: "chendo_disk.svg", id: 8},
 ]
 
 export default explorerDB;

@@ -1,9 +1,15 @@
+@use '../../base/mixins' as m; // Import Mixins 
 /* <---- This Pc Explorer ----> */
 #ContentPc {
     display: grid;
     grid-template-columns: 30% 70%;
     width: 100%;
     height: auto;
+}
+@include m.tablet {
+    #ContentPc {
+        display: flex;
+    }
 }
 .active {
     background-color: $active_pc;
@@ -55,6 +61,11 @@
         &:hover {
             background-color: $rgba_white2;
         }
+    }
+}
+@include m.tablet {
+    .ContainerPc {
+        border-left: none;
     }
 }
 .ThisPc {
@@ -117,5 +128,13 @@
 }
 #music .align_items {
     width: 70%;
+}
+@include m.tablet {
+    .align_items {
+        width: 97%;
+    }
+    #music .align_items {
+        width: 97%;
+    }
 }
 /* <---- End This Pc Explorer ----> */

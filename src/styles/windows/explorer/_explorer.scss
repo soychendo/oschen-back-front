@@ -1,10 +1,9 @@
+@use '../../base/mixins' as m; // Import Mixins 
 /*<----Init Explorer---->*/
 #Explorer {
     position: absolute;
     top: 3em;
-    left: 50%;
-    transform: translateX(-50%);
-    right: 0;
+    left: 30%;
     height: auto;
 
     li img {
@@ -29,4 +28,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+@include m.tablet {
+    .container_explorer {
+        width: 300px;
+    }
 }

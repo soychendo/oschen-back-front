@@ -10,7 +10,7 @@ const StartMenu = () => {
 
   return(
     <React.Fragment> 
-      <div id="StartMenu">
+      <div id="StartMenu" className='setMenu'>
       <div className="grid">
         <GridUser />
         <GridPrograms />

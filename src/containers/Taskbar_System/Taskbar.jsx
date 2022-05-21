@@ -1,30 +1,22 @@
-import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
+
 import IconApplication from '@components/taskbar/IconApplication/IconApplication';
 import {Logo} from '@components/taskbar/LogoStartMenu/Logo';
 import Systems from '@components/taskbar/Systems/Systems';
 import {StartMenu} from '@containers/Taskbar_System/StartMenu';
 
-const Taskbar = forwardRef(({toggleOutMenu}, ref) => {
 
-  const [start, setStart] = useState(false);
 
-  const handleToggle = () => {
-    setStart(!start);
-  }
+const Taskbar = () => {
 
-  const setMenuRef = () => setStart(false);
+  const { activeMenu } = useContext(GlobalContext);
 
-  useImperativeHandle(ref, () => {
-    return {
-      setMenuRef
-    }
-  })
-  
   return (
-    <div id="taskbar_system_tray">
-      <Logo toggle={handleToggle} />
+    <div id="taskbar_system_tray" className="os_system">
+      <Logo />
       <div className="taskbar"></div>
-      <div onMouseDown={toggleOutMenu} id="taskband">
+      <div id="taskband">
         <div className="applications">
           <IconApplication />
         </div>
@@ -32,8 +24,8 @@ const Taskbar = forwardRef(({toggleOutMenu}, ref) => {
       <div className="system_tray">
         <Systems />
       </div>
-      { start ? <StartMenu /> : null }
+      { activeMenu  ? <StartMenu /> : null}
     </div>
   );
-})
+}
 export default Taskbar;
