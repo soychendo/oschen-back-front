@@ -9,13 +9,14 @@
 `cd windows`
 3. Instala las dependencias
 `npm install`
-4. Corre el servidor Api Fake
+4. Instala Globalmente json-server
+5. Corre el servidor Api Fake
 `npm run fake-api`
-5. Corre el ambiente local
+6. Corre el ambiente local
 `npm run start`
 
 ## 🎶 Base de Datos Windows
-Esstamos simulando una api con json-server
+Estamos simulando una api con json-server
 
 ## 🧾 License
 The MIT License (MIT)
