@@ -1,17 +1,22 @@
-import React from 'react';
-import {useDataFetch} from '@hooks/useDataFetch';
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
 const Desktop = () => {
-  const url = 'http://localhost:5000/desktop';
-  const data = useDataFetch(url);
+  const desktopContext = useContext(GlobalContext);
+
+  useEffect(() => {
+    desktopContext.getData();
+  }, []);
 
   return (
     <div id="desktop" data-id="1">
-      {data.map(desktop => (
-        <div key={desktop.name} className="align_items">
-          <img src={`assets/content/${desktop.image}`} alt={desktop.name} />
-          <span>{desktop.name}</span>
-        </div>
+      {desktopContext.data.map(item => (
+        item.desktop !== null
+        ?  <div key={item.id} className="align_items">
+            <img src={`assets/content/default.svg`} alt={item.desktop} />
+            <span>{item.desktop}</span>
+          </div>
+        : null  
       ))}
     </div>
   );

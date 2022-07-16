@@ -25,9 +25,11 @@ const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [explorador, setExplorador] = useState(false);
 
+  const API = 'http://localhost:4000/api/v1/windows/';
+
   const getData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/music');
+      const response = await fetch(API);
       const json = await response.json();
       dispatch({type: GET_DATA, payload: json})
     } catch (error) {
@@ -37,8 +39,9 @@ const GlobalProvider = ({ children }) => {
 
   const getAudio = async (id) => {
     try {
-      const response = await fetch('http://localhost:5000/music/' + id);
+      const response = await fetch(API + id);
       const json = await response.json();
+      console.log(json)
       dispatch({type: GET_SONG, payload: json})
     } catch (error) {}
     

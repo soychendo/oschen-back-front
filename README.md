@@ -9,18 +9,15 @@
 `cd windows`
 3. Instala las dependencias
 `npm install`
-4. Instala Globalmente json-server
-5. Corre el servidor Api Fake
-`npm run fake-api`
-6. Corre el ambiente local
+4. En una terminal, Inicia el server
+`npm run server`
+6. En otra terminal, Corre el ambiente local
 `npm run start`
 
-## 🎶 Base de Datos Windows
-Estamos simulando una api con json-server
+## 🎶 Base de Datos
+Creamos una pequeña Api con node, para cargar las diferentes pestañas del explorer
 
 ## 🧾 License
 The MIT License (MIT)
 
-## ✨ Agradecimientos
-* Agradezco a todas las personas que confiaron en mi y que siguen creyendo no los defraudaré.
-* Esto recién está empezando.
+## ✨ Duda de todo el mundo, pero nunca dudes de ti.

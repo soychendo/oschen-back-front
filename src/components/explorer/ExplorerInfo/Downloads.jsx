@@ -1,17 +1,22 @@
-import React from 'react';
-import {useDataFetch} from '@hooks/useDataFetch';
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
 const Downloads = () => {
-  const url = 'http://localhost:5000/downloads';
-  const data = useDataFetch(url);
+  const downloadsContext = useContext(GlobalContext);
+
+  useEffect(() => {
+    downloadsContext.getData();
+  }, [])
 
   return (
     <div id="downloads" data-id="3">
-      {data.map(download => (
-        <div key={download.name} className="align_items">
-        <img src={`assets/content/${download.image}`} alt={download.name} />
-        <span>{download.name}</span>
-      </div>
+      {downloadsContext.data.map(item => (
+        item.downloads !== null
+        ? <div key={item.id} className="align_items">
+            <img src={'assets/content/default.svg'} alt={item.downloads} />
+            <span>{item.downloads}</span>
+          </div>
+        : null
       ))}
     </div>
   );

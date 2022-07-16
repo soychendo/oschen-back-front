@@ -1,17 +1,22 @@
-import React from 'react';
-import {useDataFetch} from '@hooks/useDataFetch';
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '@context/GlobalContext';
 
 const Videos = () => {
-  const url = 'http://localhost:5000/videos';
-  const data = useDataFetch(url);
+  const videoContext = useContext(GlobalContext);
+
+  useEffect(() => {
+    videoContext.getData();
+  }, []);
 
   return (
     <div id="videos" data-id="6">
-      {data.map(video => (
-        <div key={video.name} className="align_items">
-        <img src={`assets/content/${video.image}`} alt={video.name} />
-        <span>{video.name}</span>
-      </div>
+      {videoContext.data.map(item => (
+        item.videos !== null
+        ? <div key={item.id} className="align_items">
+            <img src={'assets/content/doc_video.svg'} alt={item.videos} />
+            <span>{item.videos}</span>
+          </div>
+        : null
       ))}
     </div>
   );

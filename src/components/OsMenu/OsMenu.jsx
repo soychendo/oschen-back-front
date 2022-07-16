@@ -10,7 +10,7 @@ const OsMenu = () => {
       <p>En las redes</p>
       <a className="love" href="https://chendo.io/" target="_blank"><p>created with &#x2764; by chendo</p></a>
       <a href="https://github.com/chendoio" target="_blank"><p>Github</p></a>
-      <a href="https://youtube.com/chendito" target="_blank"><p>Youtube</p></a>
+      <a href="https://youtube.com/chendoio" target="_blank"><p>Youtube</p></a>
     </div>
   );
 }

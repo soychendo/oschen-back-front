@@ -41,32 +41,33 @@ const Audio = () => {
       </div>
       <div className="AudioContainer">
         <div className="AudioDescription">
-          {selectedSong ? (
-            <>
-            <div className="AlbumImg">
-              <img 
-                src={`assets/audioseven/album/${selectedSong.album}`} 
-                alt={selectedSong.name} 
-                style={{pointerEvents: 'none'}}
-              />
-            </div>
-            <marquee 
-            behavior="scroll" 
-            direction="left" 
-            width="100%" 
-            bahaviur="alternate" 
-            align="middle" 
-            scrolldelay="5" 
-            scrollamount="4" 
-            loop="infinite" 
-            hspace="10px" 
-            vspace="5px"
-            >
-                <p className="AudioText">{selectedSong.name}</p>
-            </marquee>
-            <audio ref={audioRef} src={`audio/${selectedSong.mp3}`}></audio>
-            </>
-          ) : (
+          {selectedSong.length 
+            ? selectedSong.map(audio => (
+            <div key={audio.id}>
+              <div className="AlbumImg">
+                <img 
+                  src={`assets/audioseven/album/${audio.pictures}.jpg`} 
+                  alt={audio.music} 
+                  style={{pointerEvents: 'none'}}
+                />
+              </div>
+              <marquee 
+              behavior="scroll" 
+              direction="left" 
+              width="100%" 
+              bahaviur="alternate" 
+              align="middle" 
+              scrolldelay="5" 
+              scrollamount="4" 
+              loop="infinite" 
+              hspace="10px" 
+              vspace="5px"
+              >
+                  <p className="AudioText">{audio.music}</p>
+              </marquee>
+              <audio ref={audioRef} src={`audio/${audio.music_mp3}.mp3`}></audio>
+            </div> // The End Unique Key
+          )) : (
             <p className="AudioText">Add To Song</p> 
           )}
         </div>

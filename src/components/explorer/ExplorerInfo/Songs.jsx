@@ -7,22 +7,25 @@ const Songs = () => {
 
   useEffect(() => {
     audioContext.getData();
-  }, [])
+  }, []);
 
   return (
     <div id="music" data-id="4">
       {
       audioContext.data.length
         ? audioContext.data.map(audio => (
-          <div 
-            key={audio.name} 
+            audio.music !== null
+            ? <div 
+            key={audio.id} 
             onClick={() => audioContext.getAudio(audio.id)} 
             className="align_items" 
             data-id={audio.id}
           >
-            <img src={`assets/content/${audio.image}`} alt={audio.name} />
-            <span>{audio.name}</span>
+            <img src={`assets/content/doc_music.svg`} alt={audio.pictures} />
+            <span>{audio.music}</span>
           </div>
+          : null
+          
         ))
         : null 
       }
