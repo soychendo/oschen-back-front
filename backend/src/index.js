@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 const cors = require('cors');
 
 // Settings
@@ -8,6 +9,8 @@ app.set('port', port);
 
 // Middlewares
 app.use(express.json());
+// dotenv
+dotenv.config();
 // Cors config Access
 const whitelist = ['http://localhost:8080', 'https://mydomain.com'];
 const options = {
