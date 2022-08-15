@@ -25,7 +25,7 @@ const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [explorador, setExplorador] = useState(false);
 
-  const API = 'http://localhost:4000/api/v1/windows/';
+  const API = 'http://localhost:4000/api/v1/windows/' || 'http://192.168.100.43:4000/api/v1/windows/';
 
   const getData = async () => {
     try {
