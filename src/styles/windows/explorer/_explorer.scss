@@ -2,9 +2,10 @@
 /*<----Init Explorer---->*/
 #Explorer {
     position: absolute;
-    top: 3em;
-    left: 30%;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    
 
     li img {
         width: 17px;

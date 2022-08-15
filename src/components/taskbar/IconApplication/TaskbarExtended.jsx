@@ -10,9 +10,11 @@ const TaskbarExtended = ({name, imagen, id}) => {
   const { closeExplorer } = useContext(GlobalContext)
 
   useEffect(() => {
-    setTimeout(() => {
+    const deleteTime = setTimeout(() => {
       setTimer(true)
     }, 2000);
+
+    clearTimeout(deleteTime);
   }, [closeExplorer])
 
   return (
