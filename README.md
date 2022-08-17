@@ -2,4 +2,8 @@
 
 ✨ Versión de Windows 10 con React, creado con mucho corazón.
 
+✨ Windows 10 with React - NodeJs & Firebase
+
+🐱‍👤 https://chendo.io -> portfolio
+
 ## ✨ Duda de todo el mundo, pero nunca dudes de ti.
