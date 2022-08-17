@@ -24,6 +24,7 @@ const Audio = () => {
 
   useEffect(() => {
     changeZindex()
+    console.log(selectedSong)
   }, [])
 
   return (
@@ -41,13 +42,13 @@ const Audio = () => {
       </div>
       <div className="AudioContainer">
         <div className="AudioDescription">
-          {selectedSong.length 
-            ? selectedSong.map(audio => (
-            <div key={audio.id}>
+          {selectedSong 
+            ?  (
+            <div key={selectedSong.id}>
               <div className="AlbumImg">
                 <img 
-                  src={`assets/audioseven/album/${audio.pictures}.jpg`} 
-                  alt={audio.music} 
+                  src={`assets/audioseven/album/${selectedSong.pictures}.jpg`} 
+                  alt={selectedSong.music} 
                   style={{pointerEvents: 'none'}}
                 />
               </div>
@@ -63,11 +64,11 @@ const Audio = () => {
               hspace="10px" 
               vspace="5px"
               >
-                  <p className="AudioText">{audio.music}</p>
+                  <p className="AudioText">{selectedSong.music}</p>
               </marquee>
-              <audio ref={audioRef} src={`audio/${audio.music_mp3}.mp3`}></audio>
+              <audio ref={audioRef} src={`audio/${selectedSong.music_mp3}.mp3`}></audio>
             </div> // The End Unique Key
-          )) : (
+          ): (
             <p className="AudioText">Add To Song</p> 
           )}
         </div>

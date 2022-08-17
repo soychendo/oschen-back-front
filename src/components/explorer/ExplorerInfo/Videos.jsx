@@ -11,7 +11,7 @@ const Videos = () => {
   return (
     <div id="videos" data-id="6">
       {videoContext.data.map(item => (
-        item.videos !== null
+        item.videos !== ''
         ? <div key={item.id} className="align_items">
             <img src={'assets/content/doc_video.svg'} alt={item.videos} />
             <span>{item.videos}</span>

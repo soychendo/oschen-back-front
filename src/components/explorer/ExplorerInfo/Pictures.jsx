@@ -11,7 +11,7 @@ const Pictures = () => {
   return (
     <div id="pictures" data-id="5">
       {pictureContext.data.map(item => (
-        item.pictures !== null
+        item.pictures !== ''
         ? <div key={item.id} className="align_items">
             <img src={'assets/content/doc_image.svg'} alt={item.pictures} />
             <span>{item.pictures}</span>

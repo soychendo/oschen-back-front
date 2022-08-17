@@ -25,7 +25,7 @@ const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
   const [explorador, setExplorador] = useState(false);
 
-  const API = 'http://localhost:4000/api/v1/windows/' || 'http://192.168.100.43:4000/api/v1/windows/';
+  const API = `${process.env.BACKEND_URL}/api/v1/windows`;
 
   const getData = async () => {
     try {
@@ -39,9 +39,8 @@ const GlobalProvider = ({ children }) => {
 
   const getAudio = async (id) => {
     try {
-      const response = await fetch(API + id);
+      const response = await fetch(`${API}/${id}`);
       const json = await response.json();
-      console.log(json)
       dispatch({type: GET_SONG, payload: json})
     } catch (error) {}
     

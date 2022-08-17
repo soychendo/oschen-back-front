@@ -13,11 +13,23 @@
   width: 350px;
   height: 100px;
 }
+@media (max-width: 575px) {
+  #Audio {
+    width: 80%;
+    height: auto;
+  }
+}
 .AudioContainer {
   position: relative;
   overflow: hidden;
   width: 100px;
   height: 100%;
+}
+@media (max-width: 575px) {
+  .AudioContainer {
+    width: 70PX;
+    height: auto;
+  }
 }
 .AudioDescription {
   display: flex;
@@ -47,12 +59,25 @@
   border-color: transparent transparent transparent #ffffff;
   cursor: pointer;
 }
+@media (max-width: 575px) {
+  .btn-play {
+    border-width: 7.5px 0 7.5px 12px;
+  }
+}
 .btn-stop {
   height: 25px;
   width: 17px;
   border-left: 4px solid rgb(255, 255, 255);
   border-right: 4px solid rgb(255, 255, 255);
   cursor: pointer;
+}
+@media (max-width: 575px) {
+  .btn-stop {
+    height: 17px;
+    width: 12px;
+    border-left: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+  }
 }
 /* <---- Estilos al input range ----> */  
 input[type='range'] {

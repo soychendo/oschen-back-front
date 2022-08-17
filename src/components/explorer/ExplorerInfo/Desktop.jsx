@@ -11,7 +11,7 @@ const Desktop = () => {
   return (
     <div id="desktop" data-id="1">
       {desktopContext.data.map(item => (
-        item.desktop !== null
+        item.desktop !== ''
         ?  <div key={item.id} className="align_items">
             <img src={`assets/content/default.svg`} alt={item.desktop} />
             <span>{item.desktop}</span>

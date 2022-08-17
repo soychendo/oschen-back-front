@@ -1,9 +1,9 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
   entry: './src/index.js',
 
   output: {
@@ -59,12 +59,15 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, './src/.env')
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
       inject: 'body'
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   devServer: {
     historyApiFallback: true

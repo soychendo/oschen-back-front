@@ -2,9 +2,8 @@
 /*<----Init Explorer---->*/
 #Explorer {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    left: 50%;
+    top: 10%;
+    left: 30%;
     
 
     li img {
@@ -31,6 +30,12 @@
     flex-wrap: wrap;
 }
 @include m.tablet {
+    #Explorer {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        left: 50%;
+    }
     .container_explorer {
         width: 300px;
     }

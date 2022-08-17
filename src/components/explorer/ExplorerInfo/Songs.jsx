@@ -7,6 +7,7 @@ const Songs = () => {
 
   useEffect(() => {
     audioContext.getData();
+    console.log(audioContext.getData())
   }, []);
 
   return (
@@ -14,7 +15,7 @@ const Songs = () => {
       {
       audioContext.data.length
         ? audioContext.data.map(audio => (
-            audio.music !== null
+            audio.music !== ''
             ? <div 
             key={audio.id} 
             onClick={() => audioContext.getAudio(audio.id)} 

@@ -11,7 +11,7 @@ const Documents = () => {
   return (
     <div id="documents" data-id="2">
       {documentContext.data.map(item => (
-        item.documents !== null
+        item.documents !== ''
         ? <div key={item.id} className="align_items">
             <img src={`assets/content/default.svg`} alt={item.documents} />
             <span>{item.documents}</span>
